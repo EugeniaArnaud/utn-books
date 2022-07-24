@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const readBooks = async (id) => {
-  let url = "/books";
+  let url = "https://utn-books.herokuapp.com/books";
   if (!!id && id > 0) url += `/${id}`;
 
   const res = await axiosClient.get(url);
@@ -43,7 +43,7 @@ const Home = () => {
   }, []);
 
   const onDelete = (id) => {
-    const res = axiosClient.delete(`/books/${id}`);
+    const res = axiosClient.delete(`https://utn-books.herokuapp.com/books/${id}`);
 
     setBooks(books.filter((book) => book.id !== id));
   };
