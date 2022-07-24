@@ -1,8 +1,8 @@
 import axios from "axios";
-const baseURL = "http://localhost:3000"; 
+const baseURL = "https://utn-books.herokuapp.com"; 
 
 const axiosClient = axios.create({
-  baseURL: "http://localhost:3000", 
+  baseURL: "https://utn-books.herokuapp.com", 
   headers: {
     "Content-Type": "application/json",
   } 
