@@ -8,14 +8,14 @@ app.use(cors())
 
 
 require("dotenv").config()
-require("./db/config")
+require("./server/db/config")
 
 
 app.use(express.json())
 
 app.use(express.urlencoded({ extended: true }))
 
-app.use(express.static("storage"))
+app.use(express.static(path.join(__dirname, 'server/storage')))
 
 // app.listen(port, (err) => {
 //     err ? console.warn(`Hubo un error {
@@ -33,10 +33,10 @@ app.use(express.static(path.resolve(__dirname, "./bookstore/build")))
 
 
 //Routing for endpoint /users
-app.use("/users", require("./users/usersRoute"))
+app.use("/users", require("./server/users/usersRoute"))
 
 //Routing for endpoint /books
-app.use("/books", require("./books/booksRoute"))
+app.use("/books", require("./server/books/booksRoute"))
 
 
 //catch all route (404)

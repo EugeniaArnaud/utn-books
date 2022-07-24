@@ -15,18 +15,26 @@ const readBooks = async (id) => {
   return res.data;
 };
 
-// function deleteBook(id) {
-//   let url = "/books";
-//   if(!!id && id>0) url+=`/${id}`;
-
-//   // const res = axiosClient.delete(????);
-//   console.log(res);
-//   return readBooks().then((res) => { return res; } );
-// }
 
 const Home = () => {
   const [books, setBooks] = useState([]);
   const navigate = useNavigate();
+  const [search, setSearch] = useState('');
+
+  const searcher = (e) => {
+    setSearch(e.target.value);    
+  };
+
+  let results = [];
+  if (!search) {
+    console.log(books);
+    results = books;
+  } else {
+    results = books.filter((data) =>
+      data.name.toLowerCase().includes(search.toLowerCase())
+    );
+  }
+  console.log(results);
 
   useEffect(() => {
     readBooks().then((res) => {
@@ -42,6 +50,7 @@ const Home = () => {
   const onUpdate = (id) => {
     navigate(`/cruds/${id}`);
   };
+          
 
   const settings = {
     dots: true,
@@ -54,8 +63,8 @@ const Home = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToShow: 2,
+          slidesToScroll: 2,
           infinite: true,
           dots: true,
         },
@@ -79,8 +88,15 @@ const Home = () => {
   };
   return (
     <div className="App">
+      <input  className="searchbar"
+              value={search}
+              onChange={searcher}
+              type="text"
+              placeholder="Search..."
+              
+            />
       <Slider {...settings}>
-        {books.map((item) => (
+        {results.length>0 && results.map((item) => (
           <div key={item.id} className="card">
             <div className="card-top">
               <img src={item.image} />

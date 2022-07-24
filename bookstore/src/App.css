@@ -6,6 +6,24 @@ body {
   background-color: #e4eac8;
 }
 
+/* SEARCHBAR */
+.searchbar{
+width: 30%;
+  border: 3px solid #c6d38c;
+  position: relative;
+  display: flex;
+  padding: 10px;
+  height: 20px;
+  outline: none;
+  /* color: #c6d38c; */
+  margin: 10px;
+}
+
+.searchbar:focus{
+  border-color: #e4eac8;
+  box-shadow: 0 0 5px #cce65a;
+}
+
 /* NAVBAR */
 nav {
   background-color: #c6d38c;
