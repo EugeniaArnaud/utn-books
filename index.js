@@ -1,7 +1,7 @@
 const path = require("path");
 const cors = require("cors")
 const express = require("express")
-const port = process.env.PORT || 3000
+const PORT = process.env.PORT || 3000
 const app = express()
 
 app.use(cors())
@@ -62,6 +62,6 @@ app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "./bookstore/build", "index.html"))
 })
 
-app.listen(port, (err) => {
+app.listen(PORT, (err) => {
     console.log(err ? `Error: ${err}` : `Server up https://utn-books.herokuapp.com`)
 })
