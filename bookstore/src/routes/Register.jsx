@@ -49,7 +49,7 @@ const Register = () => {
     }),
     onSubmit: (values) => {
             const register = async (name, email, password) =>{
-        const res = await axiosClient.post("https://utn-books.herokuapp.com/users/register", {
+        const res = await axiosClient.post("/users/register", {
           name,
           email,
           password

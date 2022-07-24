@@ -69,7 +69,7 @@ const Crud = () => {
     
 
 
-      axiosClient.post("https://utn-books.herokuapp.com/books", formData, config, {
+      axiosClient.post("/books", formData, config, {
         name,
         author,
         price,
@@ -78,7 +78,7 @@ const Crud = () => {
 
       }).then((res) => {
         console.log(res, "lalal");
-        navigate("https://utn-books.herokuapp.com/");
+        navigate("/");
       }
       ).catch((err) => {
         console.log(err);
