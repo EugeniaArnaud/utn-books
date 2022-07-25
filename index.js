@@ -7,6 +7,7 @@ const app = express()
 app.use(cors())
 
 
+
 require("dotenv").config()
 require("./server/db/config")
 
