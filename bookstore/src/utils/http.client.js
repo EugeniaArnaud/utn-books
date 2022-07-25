@@ -1,8 +1,9 @@
 import axios from "axios";
+const devEnv = process.env.NODE_ENV !== "production";
 const baseURL = "https://utn-books.herokuapp.com"; 
 
 const axiosClient = axios.create({
-  baseURL, 
+  baseURL: `${devEnv ? "http://localhost:3000" : baseURL}`, 
   headers: {
     "Content-Type": "application/json",
   } 
