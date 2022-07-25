@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'server/storage')))
 // })
 
 
-app.use(express.static(path.join(__dirname, "./bookstore/build")))
+app.use(express.static(path.resolve(__dirname, "./bookstore/build")))
 
 
 // app.get("/api", (req, res) => {
