@@ -69,7 +69,7 @@ const Crud = () => {
     
 
 
-      axiosClient.post("https://utn-books.herokuapp.com/books", formData, config, {
+      axiosClient.post("/books", formData, config, {
         name,
         author,
         price,

@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const readBooks = async (id) => {
-  let url = "https://utn-books.herokuapp.com/books";
+  let url = "/books";
   if (!!id && id > 0) url += `/${id}`;
 
   const res = await axiosClient.get(url);

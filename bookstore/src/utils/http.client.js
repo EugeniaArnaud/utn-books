@@ -2,7 +2,7 @@ import axios from "axios";
 const baseURL = "https://utn-books.herokuapp.com"; 
 
 const axiosClient = axios.create({
-  baseURL: "https://utn-books.herokuapp.com", 
+  baseURL, 
   headers: {
     "Content-Type": "application/json",
   } 

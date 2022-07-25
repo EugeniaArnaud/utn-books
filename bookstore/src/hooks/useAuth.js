@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
 
   // call this function when you want to authenticate the user
   const login = async (email, password) => {
-    const response = await axiosClient.post("https://utn-books.herokuapp.com/users/login", {
+    const response = await axiosClient.post("/users/login", {
       email,
       password,
     });

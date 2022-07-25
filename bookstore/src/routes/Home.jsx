@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import axiosClient from '../utils/http.client';
 
 const readBooks = async (id) => {
-  let url = "https://utn-books.herokuapp.com/books";
+  let url = "/books";
   if(!!id && id>0) url+=`/${id}`;
   
   const res = await axiosClient.get(url);
