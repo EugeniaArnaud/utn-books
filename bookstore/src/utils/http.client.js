@@ -1,8 +1,8 @@
 import axios from "axios";
-const baseURL = "https://utn-books.herokuapp.com"; 
+const baseURL = "https://utn-books.netlify.app"; 
 
 const axiosClient = axios.create({
-  baseURL: "https://utn-books.herokuapp.com", 
+  baseURL: "https://utn-books.netlify.app", 
   headers: {
     "Content-Type": "application/json",
   } 
