@@ -22,8 +22,8 @@ app.use(express.static(path.join(__dirname, 'server/storage')))
 //         message: ${err} }`) : console.log(`Servidor corre en http://localhost:${PORT}`)
 // })
 
-
 app.use(express.static(path.resolve(__dirname, "./bookstore/build")))
+console.log(__dirname)
 
 
 // app.get("/api", (req, res) => {
