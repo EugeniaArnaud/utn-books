@@ -70,7 +70,7 @@ const Cruds = () => {
       
       
       const updateBook = async ( id, name, author, price, file ) => {
-        const res = await axiosClient.patch(`https://utn-books.herokuapp.com/books/${id}`, formData, config, {
+        const res = await axiosClient.patch(`/books/${id}`, formData, config, {
           id,
           name,
           author,

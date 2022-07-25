@@ -43,7 +43,7 @@ const Home = () => {
   }, []);
 
   const onDelete = (id) => {
-    const res = axiosClient.delete(`https://utn-books.herokuapp.com/books/${id}`);
+    const res = axiosClient.delete(`/books/${id}`);
 
     setBooks(books.filter((book) => book.id !== id));
   };
