@@ -69,22 +69,22 @@ const Crud = () => {
     
 
 
-      axiosClient.post("/books", {
-        name,
-        author,
-        price   
+    //   axiosClient.post("/books", {
+    //     name,
+    //     author,
+    //     price   
 
 
-      }).then((res) => {
-        console.log(res, "lalal");
-        navigate("/");
-      }
-      ).catch((err) => {
-        console.log(err);
-      }
-      );
+    //   }).then((res) => {
+    //     console.log(res, "lalal");
+    //     navigate("/");
+    //   }
+    //   ).catch((err) => {
+    //     console.log(err);
+    //   }
+    //   );
     
-     const { name, author, price } =       values;
+    //  const { name, author, price } =       values;
      
 
       // const addBook = async ( name, author, price) => {
@@ -122,17 +122,17 @@ const Crud = () => {
 
       //     //PARA IMAGENES: https://www.positronx.io/react-file-upload-tutorial-with-node-express-and-multer/
 
-      //   const addBook = async (name, author, price, file ) =>{
-      //     const res = await axiosClient.post("/books", {
-      //       name,
-      //       author,
-      //       price,
-      //       file
-      //     });
-      //     console.log(res);
-      //   }
-      //   const { name, author, price, file } = values;
-      //   addBook(name, author, price, file);
+        const addBook = async (name, author, price ) =>{
+          const res = await axiosClient.post("/books", {
+            name,
+            author,
+            price
+            
+          });
+          console.log(res);
+        }
+        const { name, author, price } = values;
+        addBook(name, author, price);
 
       //   //PARA IMAGENES: https://www.positronx.io/react-file-upload-tutorial-with-node-express-and-multer/
 
