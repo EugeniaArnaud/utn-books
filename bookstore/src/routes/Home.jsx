@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";    
 import { useEffect, useState } from "react";
 import axiosClient from '../utils/http.client';
+import imgbook from "../img/libro.png"
 
 const readBooks = async (id) => {
   let url = "/books";
@@ -64,7 +65,7 @@ const Home = () => {
       {books.map((item)=> (
       <div className="card">
           <div className="card-top">
-              {/* <img src="./img/libro.png" alt="" />            */}
+              <img src={imgbook} alt="" />           
           </div>
           <div className="card-bottom">
           <h1>{item.name}</h1>

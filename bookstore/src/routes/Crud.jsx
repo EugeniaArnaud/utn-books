@@ -129,7 +129,10 @@ const Crud = () => {
             price
             
           });
-          console.log(res);
+          if (res.status === 200) {
+                alert("Book added"); 
+                navigate("/homecrud");       
+              }        
         }
         const { name, author, price } = values;
         addBook(name, author, price);
