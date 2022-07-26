@@ -56,24 +56,23 @@ const Crud = () => {
     onSubmit: (     values    ) => {
 
 
-      const formData = new FormData();
-      const config = {
-        headers: {
-            'content-type': 'multipart/form-data', "accept": "application/json"
-        }
-      }
+      // const formData = new FormData();
+      // const config = {
+      //   headers: {
+      //       'content-type': 'multipart/form-data', "accept": "application/json"
+      //   }
+      // }
       // formData.append("file", values.file);
-      formData.append("name", values.name);
-      formData.append("author", values.author);
-      formData.append("price", values.price);
+      // formData.append("name", values.name);
+      // formData.append("author", values.author);
+      // formData.append("price", values.price);
     
 
 
-      axiosClient.post("/books", formData, config, {
+      axiosClient.post("/books", {
         name,
         author,
-        price,
-        
+        price   
 
 
       }).then((res) => {

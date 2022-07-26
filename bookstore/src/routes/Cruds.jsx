@@ -54,23 +54,22 @@ const Cruds = () => {
     onSubmit: (values) => {
        
 
-
-      const formData = new FormData();
-      const config = {
-        headers: {
-            'content-type': 'multipart/form-data', "accept": "application/json"
-        }
-      }
-      // formData.append("file", values.file);
-      formData.append("name", values.name);
-      formData.append("author", values.author);
-      formData.append("price", values.price);
+      // const formData = new FormData();
+      // const config = {
+      //   headers: {
+      //       'content-type': 'multipart/form-data', "accept": "application/json"
+      //   }
+      // }
+      // // formData.append("file", values.file);
+      // formData.append("name", values.name);
+      // formData.append("author", values.author);
+      // formData.append("price", values.price);
     
 
       
       
       const updateBook = async ( id, name, author, price ) => {
-        const res = await axiosClient.patch(`/books/${id}`, formData, config, {
+        const res = await axiosClient.patch(`/books/${id}`, {
           id,
           name,
           author,
