@@ -64,8 +64,7 @@ const Home = () => {
       {books.map((item)=> (
       <div className="card">
           <div className="card-top">
-              <img src={item.image}/>
-              
+              <img src='../img/libroamarillo.png'/>              
           </div>
           <div className="card-bottom">
           <h1>{item.name}</h1>

@@ -62,7 +62,7 @@ const Crud = () => {
             'content-type': 'multipart/form-data', "accept": "application/json"
         }
       }
-      formData.append("file", values.file);
+      // formData.append("file", values.file);
       formData.append("name", values.name);
       formData.append("author", values.author);
       formData.append("price", values.price);
@@ -73,7 +73,7 @@ const Crud = () => {
         name,
         author,
         price,
-        file
+        
 
 
       }).then((res) => {
@@ -85,7 +85,7 @@ const Crud = () => {
       }
       );
     
-     const { name, author, price, file } =       values;
+     const { name, author, price } =       values;
      
 
       // const addBook = async ( name, author, price) => {
@@ -210,7 +210,7 @@ const Crud = () => {
           )}
         </div>
 
-        <div class="input-container ic2">
+        {/* <div class="input-container ic2">
           <label className="placeholder" htmlFor="file">
             Select Image
           </label>
@@ -220,13 +220,11 @@ const Crud = () => {
             id="file"
             name="file"
             type="file"
-            // {...formik.getFieldProps("file")}
+          
           />
 
-          {/* {formik.touched.file && formik.errors.file && (
-            <div className="errors">{formik.errors.file}</div>
-          )} */}
-        </div>
+       
+        </div> */}
 
         <input className="submit" type="submit" />
       </form>

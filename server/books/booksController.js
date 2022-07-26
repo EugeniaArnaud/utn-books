@@ -33,11 +33,11 @@ const listAll = async(req, res, next) => {
 
 const addOne = async(req, res, next) => {
   // const cleanBody = matchedData(req)  
-   const image = `${public_url}/${req.file.filename}` 
+  //  const image = `${public_url}/${req.file.filename}` 
      
   const {name, author, price } = req.body
   console.log(req.user)
-  const dbResponse = await addNewBook({ userid: req.user.id, name, author, price, image });
+  const dbResponse = await addNewBook({ userid: req.user.id, name, author, price }); //no ,image
   dbResponse instanceof Error ? next(dbResponse) : res.status(201).json({ message: `Book created by ${req.user.name}` });
 
 }
@@ -46,8 +46,8 @@ const addOne = async(req, res, next) => {
 //edit book by id
 const editBook = async(req, res, next) => {
   if (notNumber(req.params.id, next)) return
-   const image = `${public_url}/${req.file.filename}` 
-  const dbResponse = await editBookById(+req.params.id, {...req.body, image }) 
+  //  const image = `${public_url}/${req.file.filename}` 
+  const dbResponse = await editBookById(+req.params.id, {...req.body }) //{...req.body, image}
   if (dbResponse instanceof Error) return next(dbResponse)
   dbResponse.affectedRows ? res.status(200).json({ message: "Book modified!" }) : next()
 }

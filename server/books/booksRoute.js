@@ -9,11 +9,19 @@ router.get("/", listAll)
 
 router.get("/:id", listOne)
 
-router.post("/", isAuth, uploadFile.single("file") , addOne)
+router.post("/", isAuth, addOne)
 
 
 //patch user
-router.patch("/:id", uploadFile.single("file"), editBook)
+router.patch("/:id", editBook)
+
+
+
+// router.post("/", isAuth, uploadFile.single("file") , addOne)
+
+
+// //patch user
+// router.patch("/:id", uploadFile.single("file"), editBook)
 
 
 //delete user by id

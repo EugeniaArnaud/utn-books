@@ -61,7 +61,7 @@ const Cruds = () => {
             'content-type': 'multipart/form-data', "accept": "application/json"
         }
       }
-      formData.append("file", values.file);
+      // formData.append("file", values.file);
       formData.append("name", values.name);
       formData.append("author", values.author);
       formData.append("price", values.price);
@@ -69,13 +69,13 @@ const Cruds = () => {
 
       
       
-      const updateBook = async ( id, name, author, price, file ) => {
+      const updateBook = async ( id, name, author, price ) => {
         const res = await axiosClient.patch(`/books/${id}`, formData, config, {
           id,
           name,
           author,
-          price,
-          file
+          price
+         
         });
         if (res.status === 200) {
           alert("Book added"); 
@@ -83,9 +83,9 @@ const Cruds = () => {
         }        
         
       }
-      const { name, author, price, file } =       values;
+      const { name, author, price } =       values;
       const { id } = params;      
-      updateBook(id, name, author, price, file);
+      updateBook(id, name, author, price);
     
 
       //     //PARA IMAGENES: https://www.positronx.io/react-file-upload-tutorial-with-node-express-and-multer/
@@ -177,7 +177,7 @@ const Cruds = () => {
           )}
         </div>
 
-        <div class="input-container ic2">
+        {/* <div class="input-container ic2">
           <label className="placeholder" htmlFor="file">
             Select Image
           </label>
@@ -187,13 +187,11 @@ const Cruds = () => {
             id="file"
             name="file"
             type="file"
-            // {...formik.getFieldProps("file")}
+         
           />
 
-          {/* {formik.touched.file && formik.errors.file && (
-            <div className="errors">{formik.errors.file}</div>
-          )} */}
-        </div>
+          
+        </div> */}
 
         <input className="submit" type="submit" />
       </form>
