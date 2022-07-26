@@ -56,7 +56,7 @@ const Register = () => {
         });
         if (res.statusText === "Created") {
           alert("User created successfully");
-          login(name, password);
+          login(email, password);
         }        
       }
       const { userName, email, password } = values;
