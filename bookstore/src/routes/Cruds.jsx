@@ -76,7 +76,7 @@ const Cruds = () => {
           price
          
         });
-        if (res.status === 200) {
+        if (res.status === 201) {
           alert("Book added"); 
           navigate("/homecrud");       
         }        
