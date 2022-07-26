@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const fetchBook = async (id) => {
-  let url = "/cruds";
+  let url = "/books";
   if (!!id && id > 0) url += `/${id}`;
 
   const res = await axiosClient.get(url);
