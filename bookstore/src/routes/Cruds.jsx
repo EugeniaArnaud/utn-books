@@ -4,29 +4,39 @@ import React from "react";
 import axiosClient from "../utils/http.client";
 import { useParams } from "react-router-dom"; 
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
+const fetchBook = async (id) => {
+  let url = "/cruds";
+  if (!!id && id > 0) url += `/${id}`;
+
+  const res = await axiosClient.get(url);
+
+  return res.data;
+};
 
 const Cruds = () => {
   const navigate = useNavigate();
-// const [book, setBook] = useState();
-//   useEffect(() => {
-//     fetchBook(params.id).then((res) => {
-//       console.log(res, "lalal");
-//        setBook(res);
-//     });
+const [book, setBook] = useState();
+  useEffect(() => {
+    fetchBook(params.id).then((res) => {
+      console.log(res, "lalal");
+       setBook(res);
+    });
  
-//   },[params]);
-//   useEffect(() => {
-//     // formik.setValues(
-//     //   {
-//     //     name: book.name,
-//     //     author: book.author,
-//     //     email: book.email,
-//     //     file: book.file
-//     //   }
-//     //  );
-//     console.log(book, "cambio el libro");
-//   },[book]);
+  },[params]);
+
+  useEffect(() => {
+    // formik.setValues(
+    //   {
+    //     name: book.name,
+    //     author: book.author,
+    //     email: book.email,      
+    //   }
+    //  );
+    console.log(book, "cambio el libro");
+  },[book]);
+
 
   let params = useParams();
 
@@ -65,7 +75,6 @@ const Cruds = () => {
       // formData.append("author", values.author);
       // formData.append("price", values.price);
     
-
       
       
       const updateBook = async ( id, name, author, price ) => {
@@ -86,6 +95,7 @@ const Cruds = () => {
       const { id } = params;      
       updateBook(id, name, author, price);
     
+      
 
       //     //PARA IMAGENES: https://www.positronx.io/react-file-upload-tutorial-with-node-express-and-multer/
 
