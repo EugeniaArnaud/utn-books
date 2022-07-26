@@ -99,7 +99,7 @@ const Home = () => {
         {results.length>0 && results.map((item) => (
           <div key={item.id} className="card">
             <div className="card-top">
-            <img src='../img/libroamarillo.png'/>     
+            {/* <img src='../img/libroamarillo.png'/>      */}
             </div>
             <div className="card-bottom">
               <h1>{item.name}</h1>
