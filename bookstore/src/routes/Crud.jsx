@@ -10,25 +10,8 @@ import { useNavigate } from "react-router-dom";
 
 const Crud = () => {
   const navigate = useNavigate();
-// const [book, setBook] = useState();
-//   useEffect(() => {
-//     fetchBook(params.id).then((res) => {//      
-//        setBook(res);
-//     }); 
-//   },[params]);
-//   useEffect(() => {
-//     // formik.setValues(
-//     //   {
-//     //     name: book.name,
-//     //     author: book.author,
-//     //     email: book.email,
-//     //     file: book.file
-//     //   }
-//     //  );//   
-//   },[book]);
 
   let params = useParams();
-
 
   const formik = useFormik({
     initialValues: {
@@ -79,10 +62,9 @@ const Crud = () => {
           const res = await axiosClient.post("/books", {
             name,
             author,
-            price
-            
+            price            
           });
-          if (res.status === 200) {
+          if (res.status === 201) {
                 alert("Book added"); 
                 navigate("/homecrud");       
               }        
