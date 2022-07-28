@@ -21,7 +21,7 @@ function Layout() {
     </>
   );
   return (
-    <div>
+    <div className="bodydiv">
       <nav>
         <h1>Bookstore</h1>
         {user ? loggedLayout : notLoggedLayout}       

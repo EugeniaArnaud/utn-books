@@ -52,7 +52,7 @@ const register = async(req, res, next) => {
     const user = await getUserById(dbResponse.insertId);
 
     const token = await tokenSign(user, "3h");
-    console.log(token)
+ 
     res.status(201).json({ message: "User Created!", JWT: token });
 }
 

@@ -27,15 +27,13 @@ const Home = () => {
   };
 
   let results = [];
-  if (!search) {
-    console.log(books);
+  if (!search) {    
     results = books;
   } else {
     results = books.filter((data) =>
       data.name.toLowerCase().includes(search.toLowerCase())
     );
-  }
-  console.log(results);
+  } 
 
   useEffect(() => {
     readBooks().then((res) => {

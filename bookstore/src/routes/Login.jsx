@@ -18,8 +18,7 @@ const Login = () => {
       password: yup.string()        
         .required("Required"),      
     }),
-    onSubmit: (values) => {
-      // alert(JSON.stringify(values, null, 2));
+    onSubmit: (values) => {    
       const { userName, password } = values;
       login(userName, password);
     }
@@ -47,7 +46,7 @@ const Login = () => {
           {formik.touched.userName && formik.errors.userName && <div className= "errors">{formik.errors.userName}</div>}
           </div>
 
-          <div class="input-container ic1">
+          <div className="input-container ic1">
           <label className="placeholder" htmlFor="password"></label>
           <input
           placeholder='Password'

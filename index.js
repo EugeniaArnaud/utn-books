@@ -63,5 +63,5 @@ app.get("*", (req, res) => {
 })
 
 app.listen(PORT, (err) => {
-    console.log(err ? `Error: ${err}` : `Server up https://utn-books.herokuapp.com`)
+    console.log(err ? `Error: ${err}` : `Server up https://localhost3000`)
 })

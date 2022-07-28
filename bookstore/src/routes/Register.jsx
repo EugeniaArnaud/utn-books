@@ -2,29 +2,8 @@ import React from 'react'
 import { useFormik } from 'formik'
 import * as yup from "yup"
 import axiosClient from '../utils/http.client'
-import { useNavigate } from "react-router-dom";
 import { useAuth } from '../hooks/useAuth';
 
-//validación "artesanal" previo al uso de YUP
-// const validate = (values) => {
-//   const errors = {};
-//   if (!values.firstName) {
-//     errors.firstName = "Required";
-//   } else if (values.firstName.length > 15) {
-//     errors.firstName = "Must be 15 characters or less"
-//   }
-//   if (!values.password) {
-//     errors.password = "Required";
-//   } else if (values.password.length > 20) {
-//     errors.password = "Must be 20 characters or less"
-//   }
-//   if (!values.email) {
-//     errors.email = "Required";
-//   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-//     errors.email = "Invalid email adress"
-//   }
-//   return errors
-// }
 
 const Register = () => {
   const { login } = useAuth();
@@ -34,8 +13,7 @@ const Register = () => {
       password: "",
       email: ""
     },
-    //aquí insertábamos la función que contiene las validaciones "artesanales"
-    // validate,
+  
     validationSchema: yup.object({
       userName: yup.string()
         .max(20, "Must be 20 characters or less")
@@ -60,12 +38,7 @@ const Register = () => {
         }        
       }
       const { userName, email, password } = values;
-      register(userName, email, password);
-    //   axiosClient.post("/users/register", values ).then((res) => {
-    //   console.log(res)
-    // })
-    //   // const { userName, email, password } = values;
-    //   // register(userName, email, password);
+      register(userName, email, password);  
     }
   })
   return (
@@ -83,10 +56,7 @@ const Register = () => {
             id='email'
             name='email'
             type="text"
-            {...formik.getFieldProps("email")}
-          // onChange={formik.handleChange}
-          // onBlur={formik.handleBlur}
-          // value={formik.values.email}
+            {...formik.getFieldProps("email")}         
           />
           {formik.touched.email && formik.errors.email && <div className= "errors">{formik.errors.email}</div>}
           </div>
@@ -99,10 +69,7 @@ const Register = () => {
             id='userName'
             name='userName'
             type="userName"
-            {...formik.getFieldProps("userName")}
-          // onChange={formik.handleChange}
-          // onBlur={formik.handleBlur}
-          // value={formik.values.firstName}
+            {...formik.getFieldProps("userName")}         
           />
 
           {formik.touched.userName && formik.errors.userName && <div className= "errors">{formik.errors.userName}</div>}
@@ -115,19 +82,13 @@ const Register = () => {
             id='password'
             name='password'
             type="password"
-            {...formik.getFieldProps("password")}
-          //  onChange={formik.handleChange}
-          // onBlur={formik.handleBlur}
-          // value={formik.values.password} 
+            {...formik.getFieldProps("password")}         
           />
 
           {formik.touched.password && formik.errors.password && <div className= "errors">{formik.errors.password}</div>}
-          </div>
-         
+          </div>         
           <input className="submit" type='submit' />
-
-        </form>
-     
+        </form>     
     </main>
   )
 }

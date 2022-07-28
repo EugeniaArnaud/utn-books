@@ -12,11 +12,9 @@ const Crud = () => {
   const navigate = useNavigate();
 // const [book, setBook] = useState();
 //   useEffect(() => {
-//     fetchBook(params.id).then((res) => {
-//       console.log(res, "lalal");
+//     fetchBook(params.id).then((res) => {//      
 //        setBook(res);
-//     });
- 
+//     }); 
 //   },[params]);
 //   useEffect(() => {
 //     // formik.setValues(
@@ -26,8 +24,7 @@ const Crud = () => {
 //     //     email: book.email,
 //     //     file: book.file
 //     //   }
-//     //  );
-//     console.log(book, "cambio el libro");
+//     //  );//   
 //   },[book]);
 
   let params = useParams();
@@ -55,7 +52,6 @@ const Crud = () => {
 
     onSubmit: (     values    ) => {
 
-
       // const formData = new FormData();
       // const config = {
       //   headers: {
@@ -66,61 +62,18 @@ const Crud = () => {
       // formData.append("name", values.name);
       // formData.append("author", values.author);
       // formData.append("price", values.price);
-    
-
 
     //   axiosClient.post("/books", {
     //     name,
     //     author,
     //     price   
-
-
-    //   }).then((res) => {
-    //     console.log(res, "lalal");
-    //     navigate("/");
-    //   }
+    //   }).then((res) => {       
+    //     navigate("/");   }
     //   ).catch((err) => {
-    //     console.log(err);
-    //   }
-    //   );
-    
-    //  const { name, author, price } =       values;
+    //     console.log(err);   }
+    //   );    
+    //  const { name, author, price } =   values;
      
-
-      // const addBook = async ( name, author, price) => {
-      //   // const data = new FormData();
-      //   // data.append("file", image);
-      //   const res = await axiosClient.post("/books", formData, config, {
-      //     id: userid,   
-      //     name,
-      //     author,
-      //     price,
-         
-      //   });
-      //   if (res.status === 200) {
-      //     alert("Book added"); 
-      //     navigate("/homecrud");       
-      //   } 
-      // };
-      // const { name, author, price, image } = values;
-
-      // addBook(name, author, price, image, userid);
-
-
-      // const updateBook = async ( id, name, author, price, file ) => {
-      //   const res = await axiosClient.patch(`/books/${id}`, {
-      //     id,
-      //     name,
-      //     author,
-      //     price,
-      //     file
-      //   });
-      //   console.log(res);
-      // }
-      // updateBook(params.id, name, author, price, image);
-    
-
-      //     //PARA IMAGENES: https://www.positronx.io/react-file-upload-tutorial-with-node-express-and-multer/
 
         const addBook = async (name, author, price ) =>{
           const res = await axiosClient.post("/books", {
@@ -136,14 +89,7 @@ const Crud = () => {
         }
         const { name, author, price } = values;
         addBook(name, author, price);
-
-      //   //PARA IMAGENES: https://www.positronx.io/react-file-upload-tutorial-with-node-express-and-multer/
-
-      // //   axiosClient.post("/users/register", values ).then((res) => {
-      // //   console.log(res)
-      // // })
-      // //   // const { userName, email, password } = values;
-      // //   // register(userName, email, password);
+      
     },
   });
 
@@ -174,7 +120,7 @@ const Crud = () => {
           )}
         </div>
 
-        <div class="input-container ic2">
+        <div className="input-container ic2">
           <label className="placeholder" htmlFor="author">
             Author
           </label>

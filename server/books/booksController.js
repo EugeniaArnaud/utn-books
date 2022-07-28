@@ -36,7 +36,7 @@ const addOne = async(req, res, next) => {
   //  const image = `${public_url}/${req.file.filename}` 
      
   const {name, author, price } = req.body
-  console.log(req.user)
+ 
   const dbResponse = await addNewBook({ userid: req.user.id, name, author, price }); //no ,image
   dbResponse instanceof Error ? next(dbResponse) : res.status(201).json({ message: `Book created by ${req.user.name}` });
 
