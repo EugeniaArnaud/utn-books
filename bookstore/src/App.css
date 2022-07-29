@@ -215,6 +215,7 @@ a {
 .card-bottom h1{
   font-size: 1rem;
   margin: 10px 20px;
+  min-height: 50px;
 }
 .card-bottom h2{
   font-size: 1rem;

@@ -6,6 +6,7 @@ import axiosClient from "../utils/http.client";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import imgbook from "../img/libro.png";
+import homecrudstyles from "./homecrud.module.css";
 
 const readBooks = async (id) => {
   let url = "/books";
@@ -96,7 +97,7 @@ const Home = () => {
             />
       <Slider {...settings}>
         {results.length>0 && results.map((item) => (
-          <div key={item.id} className="card">
+          <div key={item.id} className={homecrudstyles.card}>
             <div className="card-top">
             <img src={imgbook} alt="" /> 
             </div>

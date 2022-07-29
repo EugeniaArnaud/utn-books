@@ -75,7 +75,6 @@ const Crud = () => {
     },
   });
 
-
   return (
     
     <main className="container">
